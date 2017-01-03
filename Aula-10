@@ -1,0 +1,15 @@
+https://www.typescriptlang.org
+
+Com TypeScript é possível escrever código Javascript nas versões (ES3, ES4, ES5, ES6).
+Tipagem de variáveis, interfaces, classes, gereric etc.
+Tipagem forte "Inferência de tipos".
+O TypeScript é compilado para Javascript nativo.
+Open Source criado pela Microsoft (Mesmo criador do C#).
+
+* Instalação
+    npm install -g typescript
+
+* Dica
+    Listar pacotes instalados globalmente
+    npm list -g --depht=0
+    tsc -v

@@ -1,0 +1,8 @@
+* Fazer o visual studio code reconhecer o tipo do peojeto
+    # Criar na raiz do projeto "tsconfig.json"
+
+* Criar tarefa no VSCode
+    # Ctrl + Shift + P ou View - Command Palette - Configure Task Runner - tsconfig.json
+
+* Rodar tarefas no VSCode
+    # Ctrl + Shift + P ou View - Command Palette - Run Build Task

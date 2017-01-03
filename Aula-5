@@ -1,0 +1,8 @@
+Aplicações Angula 2 são baseadas em nodejs, uma plataforma baseada no motor javascript do google
+Dica:
+    Instalar em C:nodejs
+    node -v
+* NodeJS
+    https://nodejs.org/en
+* NPM (Node Package Manager)
+    Grenciador de dependências do node
