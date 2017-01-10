@@ -63,3 +63,7 @@ Acompanhamento do curso de Angula2 do udemy
     Exibindo contatos ngFor
 #Aula 30
     Criando um conponent master/detail
+#Aula 31
+    Adicionando rotas com RouterModule
+#Aula 32
+    Módulo de rotas para contatos

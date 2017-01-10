@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-// Shadow dom
-var AppComponent = (function () {
-    function AppComponent() {
+var ContatoDetalheComponent = (function () {
+    function ContatoDetalheComponent() {
     }
-    return AppComponent;
+    return ContatoDetalheComponent;
 }());
-AppComponent = __decorate([
+ContatoDetalheComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "<h1>Hello Word!</h1>\n        <router-outlet></router-outlet>\n    "
+        moduleId: module.id,
+        selector: 'contato-detalhe',
+        templateUrl: 'contato-detalhe.component.html'
     }),
     __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ContatoDetalheComponent);
+exports.ContatoDetalheComponent = ContatoDetalheComponent;
+//# sourceMappingURL=contato-detalhe.component.js.map

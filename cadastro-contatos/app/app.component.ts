@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'my-app',
     template: `<h1>Hello Word!</h1>
-            <contatos-lista></contatos-lista>
+        <router-outlet></router-outlet>
     `
 })
 export class AppComponent{
