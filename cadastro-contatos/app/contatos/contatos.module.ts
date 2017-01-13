@@ -3,11 +3,14 @@ import {ContatosListaComponent} from './contatos-lista.component';
 import {ContatoDetalheComponent} from './contato-detalhe.component';
 import {CommonModule} from '@angular/common';
 import {ContatoRoutingModule} from './contato-routing.module';
+import {ContatoService} from './contato.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
-        ContatoRoutingModule
+        ContatoRoutingModule,
+        FormsModule
     ],
     declarations: [
         ContatosListaComponent,
@@ -15,7 +18,8 @@ import {ContatoRoutingModule} from './contato-routing.module';
     ],
     exports:[
         ContatosListaComponent
-    ]
+    ],
+    providers: [ContatoService],
 })
 export class ContatosModule {
 

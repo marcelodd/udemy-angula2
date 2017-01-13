@@ -67,3 +67,35 @@ Acompanhamento do curso de Angula2 do udemy
     Adicionando rotas com RouterModule
 #Aula 32
     Módulo de rotas para contatos
+#Aula 33
+    Barra de navegação e botões
+#Aula 34
+    RouterLinks
+#Aula 35
+    RouterLinks com parâmetros
+#Aula 36
+    Criando um serviço reutilizável
+#Aula 37
+    Chamadas assíncronas com promisses
+#Aula 38
+    Simulando conexão lenta e encadeando promisses
+#Aula 39
+    Extraindo parâmetros da rota
+#Aula 40
+    Buscando contato por id
+#Aula 41
+    Two-way data-binding com ngModel
+#Aula 42
+    Verificando parâmetro de rotas
+#Aula 43
+    Desabilitando o botão salvar do formulário
+#Aula 44
+    Mudanças de estado e validade com ngModel
+#Aula 45
+    Mensagens de erro do formulário com Bootstrap e ngClass
+#Aula 46
+    Evento ngSubmit
+#Aula 47
+    Criando API simulada
+#Aula 
+    Buscando contatos da nossa API

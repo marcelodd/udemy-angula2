@@ -9,11 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var contatos_moc_1 = require("./contatos.moc");
+var contato_service_1 = require("./contato.service");
 var ContatosListaComponent = (function () {
-    function ContatosListaComponent() {
-        this.contatos = contatos_moc_1.CONTATOS;
+    function ContatosListaComponent(contatoService) {
+        this.contatoService = contatoService;
     }
+    // arrow functions
+    ContatosListaComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.contatoService.getContatos()
+            .then(function (contatos) {
+            _this.contatos = contatos;
+        }).catch(function (err) { return console.log(err); });
+    };
     return ContatosListaComponent;
 }());
 ContatosListaComponent = __decorate([
@@ -25,7 +33,7 @@ ContatosListaComponent = __decorate([
             'contatos-lista.component.css'
         ]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [contato_service_1.ContatoService])
 ], ContatosListaComponent);
 exports.ContatosListaComponent = ContatosListaComponent;
 //# sourceMappingURL=contatos-lista.component.js.map

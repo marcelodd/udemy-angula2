@@ -13,6 +13,8 @@ var contatos_lista_component_1 = require("./contatos-lista.component");
 var contato_detalhe_component_1 = require("./contato-detalhe.component");
 var common_1 = require("@angular/common");
 var contato_routing_module_1 = require("./contato-routing.module");
+var contato_service_1 = require("./contato.service");
+var forms_1 = require("@angular/forms");
 var ContatosModule = (function () {
     function ContatosModule() {
     }
@@ -22,7 +24,8 @@ ContatosModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            contato_routing_module_1.ContatoRoutingModule
+            contato_routing_module_1.ContatoRoutingModule,
+            forms_1.FormsModule
         ],
         declarations: [
             contatos_lista_component_1.ContatosListaComponent,
@@ -30,7 +33,8 @@ ContatosModule = __decorate([
         ],
         exports: [
             contatos_lista_component_1.ContatosListaComponent
-        ]
+        ],
+        providers: [contato_service_1.ContatoService],
     }),
     __metadata("design:paramtypes", [])
 ], ContatosModule);

@@ -5,11 +5,18 @@ import { AppComponent } from './app.component';
 import { ContatosModule } from './contatos/contatos.module';
 import {AppRoutingModule} from './app-routing.module';
 
+import {HttpModule} from '@angular/http';
+
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
+
 @NgModule({
     imports: [
         AppRoutingModule,
         BrowserModule,
-        ContatosModule
+        ContatosModule,
+        HttpModule,
+        InMemoryWebApiModule.forRoot(InMemoryDataService)
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]

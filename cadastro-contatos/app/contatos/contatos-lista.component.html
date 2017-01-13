@@ -1,8 +1,8 @@
 <div class="container">
     <div class=row>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <h2>Meus Contatos</h2>
-
+            
+            <a href="#" class="btn btn-success" routerLink="/contato/save">Novo</a>
             <table class="table table-stripped table-hover">
                 <thead>
                     <tr>
@@ -14,7 +14,7 @@
                 </thead>
 
                 <tbody>
-                    <tr *ngFor="let contato of contatos">
+                    <tr *ngFor="let contato of contatos" [routerLink]="['/contato/save', contato.id]">
                         <td>{{contato.nome}}</td>
                         <td>{{contato.email}}</td>
                         <td>{{contato.telefone}}</td>

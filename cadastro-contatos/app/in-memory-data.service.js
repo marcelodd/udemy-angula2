@@ -1,0 +1,19 @@
+"use strict";
+var InMemoryDataService = (function () {
+    function InMemoryDataService() {
+    }
+    InMemoryDataService.prototype.createDb = function () {
+        var contatos = [
+            { id: 1, nome: 'Ana Maria', email: 'anamaria@email.com', telefone: '(00) 0000-0000' },
+            { id: 2, nome: 'João Miguel', email: 'anamaria@email.com', telefone: '(00) 0000-0000' },
+            { id: 3, nome: 'Marcelo de Castro', email: 'anamaria@email.com', telefone: '(00) 0000-0000' },
+            { id: 4, nome: 'Ana Paula', email: 'anamaria@email.com', telefone: '(00) 0000-0000' },
+            { id: 5, nome: 'Camila', email: 'anamaria@email.com', telefone: '(00) 0000-0000' },
+            { id: 6, nome: 'Carlos Eduardo', email: 'anamaria@email.com', telefone: '(00) 0000-0000' }
+        ];
+        return { contatos: contatos };
+    };
+    return InMemoryDataService;
+}());
+exports.InMemoryDataService = InMemoryDataService;
+//# sourceMappingURL=in-memory-data.service.js.map

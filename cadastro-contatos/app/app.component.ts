@@ -3,10 +3,9 @@ import {Component} from '@angular/core';
 // Shadow dom
 
 @Component({
+    moduleId: module.id,
     selector: 'my-app',
-    template: `<h1>Hello Word!</h1>
-        <router-outlet></router-outlet>
-    `
+    templateUrl: 'app.component.html'
 })
 export class AppComponent{
 
