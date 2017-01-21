@@ -2,33 +2,66 @@ import { Injectable } from '@angular/core';
 import { CONTATOS } from './contatos.moc';
 import { Contato } from './contato.model';
 
+import { Observable } from 'rxjs';
+
 import 'rxjs/add/operator/toPromise';
 
-import {Http} from '@angular/http';
+import { Http, Headers, Response } from '@angular/http';
+
+import {ServiceInterface} from './../interfaces/service.interface';
 
 @Injectable()
-export class ContatoService {
+export class ContatoService implements ServiceInterface<Contato>{
 
     private apiUrl: string = 'app/contatos';
+    private headers: Headers = new Headers({ 'Content-Type': 'application/json' })
 
     constructor(
         private http: Http
-    ){}
+    ) { }
 
-    getContatos(): Promise<Contato[]> {
+    findAll(): Promise<Contato[]> {
         return this.http.get(this.apiUrl)
             .toPromise()
-            .then(response => response.json().data as Contato[]);
+            .then(response => response.json().data as Contato[])
+            .catch(this.handleError);
         //return Promise.resolve(CONTATOS);
     }
 
-    getContato(id: number): Promise<Contato> {
-        return this.getContatos()
+    private handleError(err: any): Promise<any> {
+        return Promise.reject(err.message || err);
+    }
+
+    find(id: number): Promise<Contato> {
+        return this.findAll()
             .then((contatos: Contato[]) => {
                 return contatos.find((contato) => {
                     return contato.id === id;
                 });
             });
+    }
+
+    create(contato: Contato): Promise<Contato> {
+        return this.http.post(this.apiUrl, JSON.stringify(contato), { headers: this.headers })
+            .toPromise()
+            .then((response: Response) => response.json().data as Contato)
+            .catch(this.handleError);
+    }
+
+    update(contato: Contato): Promise<Contato> {
+        const url = `${this.apiUrl}/${contato.id}`;
+        return this.http.put(url, JSON.stringify(contato), { headers: this.headers })
+            .toPromise()
+            .then(() => contato as Contato)
+            .catch(this.handleError);
+    }
+
+    delete(contato: Contato): Promise<Contato> {
+        const url = `${this.apiUrl}/${contato.id}`;
+        return this.http.delete(url, { headers: this.headers })
+            .toPromise()
+            .then(() => contato as Contato)
+            .catch(this.handleError);
     }
 
     getContatoSlowly(): Promise<Contato[]> {
@@ -52,7 +85,13 @@ export class ContatoService {
             })
             .then(() => {
                 console.log('terceiro then');
-                return this.getContatos()
+                return this.findAll()
             });
+    }
+
+    search(term: string): Observable<Contato[]> {
+        return this.http
+            .get(`${this.apiUrl}/?nome=${term}`)
+            .map((res: Response) => res.json().data as Contato[]);
     }
 }

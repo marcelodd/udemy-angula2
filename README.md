@@ -97,5 +97,59 @@ Acompanhamento do curso de Angula2 do udemy
     Evento ngSubmit
 #Aula 47
     Criando API simulada
-#Aula 
+#Aula 48
     Buscando contatos da nossa API
+#Aula 49
+    Tratando erros com catch
+#Aula 50
+    Cadastrando novo contato
+#Aula 51
+    Alterando um contato existente
+#Aula 52
+    DialogService
+#Aula 53
+    Deletando um contato
+#Aula 54
+    Mensagem ao deletar contato com ngClass, ngSwith e ngIf
+#Aula 55
+    Melhorando nossa mensagem de erro do Timeout
+#Aula 56
+    Mensagem para lista vazia com ngIf
+#Aula 57
+    Usando location.back()
+#Aula 58
+    Plugin de Snippets do Angular
+#Aula 59
+    Criando Component para a busca
+#Aula 60
+    Sobre os Observables
+#Aula 61
+    Criando método para retornar um Observable no ContatoService
+#Aula 62
+    Capturando entrada do usuário
+#Aula 63
+    Implementando a lógica de busca
+#Aula 64
+    Aguardando tempo para a próxima chamada
+#Aula 65
+    Ignorando buscas repetidas
+#Aula 66
+    Tratamento de erro com catch
+#Aula 67
+    Exibindo contatos da busca
+#Aula 68
+    Sobre Input e Output properties
+#Aula 69
+    Input Property
+#Aula 70
+    Output Property
+#Aula 71
+    Syntax Sugar com two-way-data-binding
+#Aula 72
+    Resetando a busca ao clicar em um item
+#Aula 73
+    Interface para os serviços
+#Aula 74
+    Considerações finais sobre esta seção
+#Aula 75
+    Exercício

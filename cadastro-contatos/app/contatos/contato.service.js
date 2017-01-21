@@ -15,12 +15,17 @@ var ContatoService = (function () {
     function ContatoService(http) {
         this.http = http;
         this.apiUrl = 'app/contatos';
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     ContatoService.prototype.getContatos = function () {
         return this.http.get(this.apiUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; });
+            .then(function (response) { return response.json().data; })
+            .catch(this.handleError);
         //return Promise.resolve(CONTATOS);
+    };
+    ContatoService.prototype.handleError = function (err) {
+        return Promise.reject(err.message || err);
     };
     ContatoService.prototype.getContato = function (id) {
         return this.getContatos()
@@ -29,6 +34,26 @@ var ContatoService = (function () {
                 return contato.id === id;
             });
         });
+    };
+    ContatoService.prototype.create = function (contato) {
+        return this.http.post(this.apiUrl, JSON.stringify(contato), { headers: this.headers })
+            .toPromise()
+            .then(function (response) { return response.json().data; })
+            .catch(this.handleError);
+    };
+    ContatoService.prototype.update = function (contato) {
+        var url = this.apiUrl + "/" + contato.id;
+        return this.http.put(url, JSON.stringify(contato), { headers: this.headers })
+            .toPromise()
+            .then(function () { return contato; })
+            .catch(this.handleError);
+    };
+    ContatoService.prototype.delete = function (contato) {
+        var url = this.apiUrl + "/" + contato.id;
+        return this.http.delete(url, { headers: this.headers })
+            .toPromise()
+            .then(function () { return contato; })
+            .catch(this.handleError);
     };
     ContatoService.prototype.getContatoSlowly = function () {
         var _this = this;
@@ -53,6 +78,11 @@ var ContatoService = (function () {
             console.log('terceiro then');
             return _this.getContatos();
         });
+    };
+    ContatoService.prototype.search = function (term) {
+        return this.http
+            .get(this.apiUrl + "/?nome=" + term)
+            .map(function (res) { return res.json().data; });
     };
     return ContatoService;
 }());

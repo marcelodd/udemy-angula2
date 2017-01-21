@@ -50,10 +50,18 @@ var ContatoDetalheComponent = (function () {
         };
     };
     ContatoDetalheComponent.prototype.onSubmit = function () {
+        var _this = this;
+        var promise;
         if (this.isNew) {
+            promise = this.contatoService.create(this.contato);
         }
         else {
+            promise = this.contatoService.update(this.contato);
         }
+        promise.then(function (contato) { return _this.location.back(); });
+    };
+    ContatoDetalheComponent.prototype.goBack = function () {
+        this.location.back();
     };
     return ContatoDetalheComponent;
 }());
